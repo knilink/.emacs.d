@@ -39,6 +39,7 @@
    (define-key js-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-expression)
    (define-key js-mode-map (kbd "C-c C-j") 'nodejs-repl-send-line)
    (define-key js-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
+   (define-key js-mode-map (kbd "C-c C-c") 'nodejs-repl-send-buffer)
    (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
    (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))
 
@@ -98,5 +99,9 @@
 (global-set-key (kbd "s-5") (lambda ()(interactive)(my-switch-to-window 5)))
 (global-set-key (kbd "M-[") (lambda ()(interactive)(other-window -1)))
 (global-set-key (kbd "M-]") (lambda ()(interactive)(other-window 1)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; avy
+(global-set-key (kbd "C-'") 'avy-goto-char-2)
 
 ;;;my-init.el ends here

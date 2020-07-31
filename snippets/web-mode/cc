@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: React.createClass
+# key: cc
+# --
+class ${1:MyComponent} extends React.Component {
+  render() {
+    return ${0:null};
+  }
+}

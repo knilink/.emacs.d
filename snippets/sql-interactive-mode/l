@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : limit
+# --
+LIMIT 1

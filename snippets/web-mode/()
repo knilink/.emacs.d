@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: anonymous_function
+# key: ()
+# --
+($1) => $0

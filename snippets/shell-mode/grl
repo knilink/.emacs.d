@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : grep-rl
+# --
+grep -rl '$0' *

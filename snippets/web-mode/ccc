@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: React.createClassWithConstructor
+# key: ccc
+# --
+class ${1:MyComponent} extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={};
+  }
+  render() {
+    return ${0:null};
+  }
+}

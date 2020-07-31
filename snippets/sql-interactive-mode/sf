@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : select from
+# --
+SELECT * FROM "$1" $0

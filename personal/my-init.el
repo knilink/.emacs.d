@@ -32,6 +32,7 @@
 
 ;===============================================================================
 ;setup js repl
+(setq nodejs-repl-arguments '("--experimental-repl-await"))
 (require 'nodejs-repl)
 (add-hook
  'js2-mode-hook

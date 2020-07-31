@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : order by
+# --
+ORDER BY "$1" $0

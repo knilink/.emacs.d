@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : find
+# --
+
+find . -not -path '*node_modules*' -name '*$0*'

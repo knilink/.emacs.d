@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : where
+# --
+WHERE "$1"=$0

@@ -105,4 +105,7 @@
 ;; avy
 (global-set-key (kbd "C-'") 'avy-goto-char-2)
 
+; workaround for emacs 27 bug
+; (setq load-history (seq-filter (lambda (a) (stringp (car a))) load-history))
+
 ;;;my-init.el ends here

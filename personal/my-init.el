@@ -3,7 +3,9 @@
 
 (prelude-require-packages '(yasnippet
                             prettier-js
-                            nodejs-repl))
+                            nodejs-repl
+                            pug-mode
+                            jenkinsfile-mode))
 
 ;(require 'web-mode)
 ;;;
@@ -105,7 +107,14 @@
 ;; avy
 (global-set-key (kbd "C-'") 'avy-goto-char-2)
 
-; workaround for emacs 27 bug
-; (setq load-history (seq-filter (lambda (a) (stringp (car a))) load-history))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(remove-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; company-sql
+; (require 'company)
+; (load "/Users/yihui.lin/.emacs.d/personal/company-sql.el")
+; (add-to-list 'company-backends 'company-sql)
+; (autoload 'sql-def-buffer-create-for-name-at-point "sql-def")
 
 ;;;my-init.el ends here

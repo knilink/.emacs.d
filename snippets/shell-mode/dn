@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : diff
+# --
+
+git --no-pager diff master... --name-only

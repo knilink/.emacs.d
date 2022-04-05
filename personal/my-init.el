@@ -2,10 +2,15 @@
 ;; http://www.cyrusinnovation.com/initial-emacs-setup-for-reactreactnative/
 
 (prelude-require-packages '(yasnippet
-                            prettier-js
+                            prettier
                             nodejs-repl
                             pug-mode
-                            jenkinsfile-mode))
+                            jenkinsfile-mode
+                            ; app framework
+                            ctable
+                            deferred
+                            epc
+                            s))
 
 ;(require 'web-mode)
 ;;;
@@ -25,11 +30,6 @@
  )
 
 
-(defun eslint-fix ()
-  (interactive)
-;  (message (concat "eslint --fixing " (buffer-file-name)))
-  (shell-command (concat  "eslint --fix " (buffer-file-name)))
-  (revert-buffer t t))
 
 
 ;===============================================================================
@@ -44,7 +44,9 @@
    (define-key js-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
    (define-key js-mode-map (kbd "C-c C-c") 'nodejs-repl-send-buffer)
    (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
-   (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))
+   (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)
+   ; (define-key js-mode-map (kbd "C-c C-t") 'run-dw-test)
+   ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; typescript
@@ -79,10 +81,10 @@
 (remove-hook 'before-save-hook 'tide-format-before-save)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; prettier-js
-(require 'prettier-js)
-(add-hook 'js2-mode-hook 'prettier-js-mode)
-(add-hook 'web-mode-hook 'prettier-js-mode)
-(add-hook 'typescript-mode-hook 'prettier-js-mode)
+(require 'prettier)
+(add-hook 'js2-mode-hook 'prettier-mode)
+(add-hook 'web-mode-hook 'prettier-mode)
+(add-hook 'typescript-mode-hook 'prettier-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; yasnippet
@@ -111,10 +113,24 @@
 (remove-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; emacs-application-framework
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-application-framework/")
+;; (require 'eaf)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; sql
+(setq sql-user "adslot")
+(setq sql-database "adslot_development")
+(setq sql-server "127.0.0.1")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; company-sql
 ; (require 'company)
 ; (load "/Users/yihui.lin/.emacs.d/personal/company-sql.el")
 ; (add-to-list 'company-backends 'company-sql)
 ; (autoload 'sql-def-buffer-create-for-name-at-point "sql-def")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (setq create-lockfiles nil)
 
 ;;;my-init.el ends here

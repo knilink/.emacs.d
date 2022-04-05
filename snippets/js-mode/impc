@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : impc
+# --
+const { promisify, callbackify } = require('util');

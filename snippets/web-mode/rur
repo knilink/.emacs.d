@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: react use ref
+# key: rur
+# --
+const ref = React.useRef($0);
